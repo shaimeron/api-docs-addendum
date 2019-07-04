@@ -36,7 +36,7 @@
     
     
       
-        <title>Rate-Limiting - TradeStation API Docs - Addendum</title>
+        <title>Exploring the API - TradeStation API Docs - Addendum</title>
       
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#rate-limiting" tabindex="1" class="md-skip">
+      <a href="#api-details" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -103,7 +103,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Rate-Limiting
+                Exploring the API
               
             </span>
           
@@ -194,6 +194,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -201,72 +213,37 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Rate-Limiting
-      </label>
     
-    <a href="./" title="Rate-Limiting" class="md-nav__link md-nav__link--active">
-      Rate-Limiting
+    <a href="./" title="Exploring the API" class="md-nav__link md-nav__link--active">
+      Exploring the API
     </a>
     
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rate-limiting" title="Rate Limiting" class="md-nav__link">
-    Rate Limiting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-categories" title="Resource Categories" class="md-nav__link">
-    Resource Categories
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intervals" title="Intervals" class="md-nav__link">
-    Intervals
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-a" title="Example A" class="md-nav__link">
-    Example A
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-b" title="Example B" class="md-nav__link">
-    Example B
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
+  </li>
+
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
   </li>
 
     
@@ -296,56 +273,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rate-limiting" title="Rate Limiting" class="md-nav__link">
-    Rate Limiting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-categories" title="Resource Categories" class="md-nav__link">
-    Resource Categories
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intervals" title="Intervals" class="md-nav__link">
-    Intervals
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-a" title="Example A" class="md-nav__link">
-    Example A
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-b" title="Example B" class="md-nav__link">
-    Example B
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -358,114 +287,12 @@
               
                 
                 
-                  <h1>Rate-Limiting</h1>
-                
-                <h2 id="rate-limiting">Rate Limiting</h2>
-<p>The TradeStation API Rate Limits on the number of requests a given user &amp;
-client can make to the API in order to ensure fairness between users and
-prevent abuse to our network. Each API Key is allocated quota settings upon
-creation. These settings are applied on a per-user basis. If the quota is
-exceeded, an HTTP response of <code>403 Quota Exceeded</code> will be
-returned. Quotas are reset on a 5-minute interval based on when the user
-issued the first request.</p>
-<h2 id="resource-categories">Resource Categories</h2>
-<p>The rate limit applies to the following resource-categories:</p>
-<table>
-<thead>
-<tr>
-<th>Resource-Category</th>
-<th>Quota</th>
-<th>Interval</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Accounts</td>
-<td>250</td>
-<td>5-minute</td>
-</tr>
-<tr>
-<td>Order Details</td>
-<td>250</td>
-<td>5-minute</td>
-</tr>
-<tr>
-<td>Balances</td>
-<td>250</td>
-<td>5-minute</td>
-</tr>
-<tr>
-<td>Positions</td>
-<td>250</td>
-<td>5-minute</td>
-</tr>
-<tr>
-<td>Data Quotes</td>
-<td>250</td>
-<td>5-minute</td>
-</tr>
-<tr>
-<td>Quote Change Stream</td>
-<td>500</td>
-<td>5-minute</td>
-</tr>
-<tr>
-<td>Quote Snapshot Stream</td>
-<td>500</td>
-<td>5-minute</td>
-</tr>
-<tr>
-<td>Barchart Stream</td>
-<td>500</td>
-<td>5-minute</td>
-</tr>
-<tr>
-<td>TickBar Stream</td>
-<td>500</td>
-<td>5-minute</td>
-</tr>
-</tbody>
-</table>
-<h2 id="intervals">Intervals</h2>
-<p>Quotas have "Windows" that last for a limited time interval
-(generally 5-minutes). Once the user has exceeded the maximum request count,
-all future requests will fail with a <code>403</code> error until the interval expires.
-Rate Limit intervals do not slide based upon the number of requests, they are
-fixed at a point in time starting from the very first request for that
-category of resource.  After the interval expires, the cycle will
-start over at zero and the user can make more requests.</p>
-<h3 id="example-a">Example A</h3>
-<p>A user logs into the TradeStation WebAPI with your application and issues a
-request to <code>/v2/EliteTrader/accounts</code>. As a result, the request
-quota is incremented by one for the <code>Accounts</code> resource-category. The user
-then issues 250 more requests immediately to <code>/v2/EliteTrader/accounts</code>.
-The last request fails with <code>403 Quota Exceeded</code>. All subsequent requests
-continue to fail until the 5-minute interval expires from the time of the
-very first request.</p>
-<h3 id="example-b">Example B</h3>
-<p>A user logs into the TradeStation WebAPI with your application and issues a
-request to <code>/v2/data/quote/IBM,NFLX,MSFT,AMZN,AAPL</code>. As a result, the
-request quota is incremented by one for the <code>Data Quotes</code>
-resource-category. The user then immediately issues the same request 250 more
-times. The last request fails with <code>403 Quota Exceeded</code>. All
-subsequent requests continue to fail until the 5-minute interval expires
-from the time of the first request.</p>
-<p><strong>Example Throttled Request</strong></p>
-<pre><code>GET https://api.tradestation.com/v2/data/quotes/IBM,NFLX,MSFT,AMZN,AAPL HTTP/1.1
-Host: api.tradestation.com
-Authorization: bearer eE45VkdQSnlBcmI0Q2RqTi82SFdMSVE0SXMyOFo5Z3dzVzdzdk
-Accept: application/json
-</code></pre>
-
-<p><strong>Example Failed Response</strong></p>
-<pre><code>HTTP/1.1 403 Quota Exceeded
-Content-Length: 15
-Server: Microsoft-IIS/7.5
-X-AspNet-Version: 4.0.30319
-Date: Tue, 06 Dec 2011 20:50:32 GMT
-
-&lt;html&gt;&lt;body&gt;Quota Exceeded&lt;/body&gt;&lt;/html&gt;
-</code></pre>
+                <h1 id="api-details">API Details</h1>
+<ul>
+<li><a href="../marketdata/">MarketData</a></li>
+<li><a href="../order-execution/">Order-Execution</a></li>
+<li><a href="../brokerage/">Brokerage Accounts</a></li>
+</ul>
                 
                   
                 
@@ -486,7 +313,7 @@ Date: Tue, 06 Dec 2011 20:50:32 GMT
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -495,19 +322,19 @@ Date: Tue, 06 Dec 2011 20:50:32 GMT
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Overview
+                Getting Started
               </span>
             </div>
           </a>
         
         
-          <a href="../about/" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../troubleshooting/" title="Troubleshooting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                About
+                Troubleshooting
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
