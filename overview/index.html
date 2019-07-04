@@ -282,10 +282,70 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
       Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication/" title="Authentication" class="md-nav__link">
+      Authentication
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../example-console-app/" title="Creating a Console App" class="md-nav__link">
+      Creating a Console App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../example-web-app/" title="Creating a simple Web App" class="md-nav__link">
+      Creating a simple Web App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../example-react-app/" title="Creating a React Web App" class="md-nav__link">
+      Creating a React Web App
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -294,10 +354,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../api-details/" title="Exploring the API" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
       Exploring the API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Exploring the API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../marketdata/" title="MarketData" class="md-nav__link">
+      MarketData
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../brokerage/" title="Brokerage" class="md-nav__link">
+      Brokerage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../order-execution/" title="Order-Execution" class="md-nav__link">
+      Order-Execution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -434,7 +542,7 @@
                 
                   <h1>Overview</h1>
                 
-                <h2 id="http-requests">HTTP Requests</h2>
+                <h2 id="http-requests">HTTP Requests<a class="headerlink" href="#http-requests" title="Permanent link"></a></h2>
 <p>All API access is over HTTPS, and accessed from the https://api.tradestation.com.
 All data is sent and received as JSON, with some limited support for XML.</p>
 <p>Example Request:</p>
@@ -453,12 +561,12 @@ Date: Wed, 30 Nov 2016 01:51:45 GMT
 ]
 </code></pre>
 
-<h3 id="common-conventions">Common Conventions</h3>
+<h3 id="common-conventions">Common Conventions<a class="headerlink" href="#common-conventions" title="Permanent link"></a></h3>
 <ul>
 <li>Blank fields may either be included as null or omitted, so please support both.</li>
 <li>All timestamps are returned in <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch time</a> format unless stated otherwise.</li>
 </ul>
-<h2 id="http-streaming">HTTP Streaming</h2>
+<h2 id="http-streaming">HTTP Streaming<a class="headerlink" href="#http-streaming" title="Permanent link"></a></h2>
 <p>The TradeStation API offers HTTP Streaming responses for some specialized
 resources including intraday barcharts, quote changes, and quote snapshots.
 These streams conform to RFC2616 for HTTP/1.1 Streaming with some slight
@@ -520,7 +628,7 @@ unlike a canonical HTTP/1.1 Stream.</p>
 <p>In either case, the HTTP client must terminate the HTTP Stream and end the
 HTTP Request lifetime as a result of these messages. In the case of <code>ERROR</code>
 the client application may add a delay before re-requesting the HTTP Stream.</p>
-<h3 id="how-to-handle-http-chunked-encoded-streams">How to handle HTTP Chunked Encoded Streams</h3>
+<h3 id="how-to-handle-http-chunked-encoded-streams">How to handle HTTP Chunked Encoded Streams<a class="headerlink" href="#how-to-handle-http-chunked-encoded-streams" title="Permanent link"></a></h3>
 <p>Healthy chunked-encoded streams emit variable length chunks that contain
 parsable JSON.</p>
 <p>For example:</p>
@@ -548,7 +656,7 @@ END
 <p>Typically this will stream forever, unless a network interruption or service
 disruption occurs. It is up to the client to properly handle stream lifetime
 and connection closing.</p>
-<h3 id="how-to-parse-json-chunks">How to parse JSON chunks</h3>
+<h3 id="how-to-parse-json-chunks">How to parse JSON chunks<a class="headerlink" href="#how-to-parse-json-chunks" title="Permanent link"></a></h3>
 <p>In order to process these chunks, API consumers should first read the
 response buffer, then de-chunk the plain-text strings, and finally identify
 new JSON objects by applying tokenizing techniques to the resulting text
@@ -557,7 +665,7 @@ brute-force string indexing logic.</p>
 <p>A simple but effective technique is after de-chunking to simply parse based
 upon the <code>\n</code> (newline character) delimiter written to the end of each
 JSON object. However, a more robust solution is less likely to break later.</p>
-<h4 id="variable-length-json-chunking">Variable Length JSON Chunking</h4>
+<h4 id="variable-length-json-chunking">Variable Length JSON Chunking<a class="headerlink" href="#variable-length-json-chunking" title="Permanent link"></a></h4>
 <p>As a developer, be careful with how you parse HTTP Streams, because the
 APIâ€™s or intermediate proxies may chunk JSON objects many different ways.</p>
 <blockquote>
@@ -662,13 +770,13 @@ from 1 JSON object per chunk, to splitting each JSON object across 2 or 3.</p>
           </a>
         
         
-          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../authentication/" title="Authentication" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Getting Started
+                Authentication
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -682,6 +790,10 @@ from 1 JSON object per chunk, to splitting each JSON object across 2 or 3.</p>
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 <a href="https://www.tradestation.com/_tomchristie">TradeStation Tecnologies</a>
+          </div>
         
         powered by
         <a href="https://www.mkdocs.org">MkDocs</a>

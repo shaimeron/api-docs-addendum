@@ -195,10 +195,70 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
       Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../authentication/" title="Authentication" class="md-nav__link">
+      Authentication
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../example-console-app/" title="Creating a Console App" class="md-nav__link">
+      Creating a Console App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../example-web-app/" title="Creating a simple Web App" class="md-nav__link">
+      Creating a simple Web App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../example-react-app/" title="Creating a React Web App" class="md-nav__link">
+      Creating a React Web App
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -207,10 +267,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../api-details/" title="Exploring the API" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
       Exploring the API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Exploring the API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../marketdata/" title="MarketData" class="md-nav__link">
+      MarketData
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../brokerage/" title="Brokerage" class="md-nav__link">
+      Brokerage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../order-execution/" title="Order-Execution" class="md-nav__link">
+      Order-Execution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -328,7 +436,7 @@
                 
                   <h1>Rate limiting</h1>
                 
-                <h2 id="rate-limiting">Rate Limiting</h2>
+                <h2 id="rate-limiting">Rate Limiting<a class="headerlink" href="#rate-limiting" title="Permanent link"></a></h2>
 <p>The TradeStation API Rate Limits on the number of requests a given user &amp;
 client can make to the API in order to ensure fairness between users and
 prevent abuse to our network. Each API Key is allocated quota settings upon
@@ -336,7 +444,7 @@ creation. These settings are applied on a per-user basis. If the quota is
 exceeded, an HTTP response of <code>403 Quota Exceeded</code> will be
 returned. Quotas are reset on a 5-minute interval based on when the user
 issued the first request.</p>
-<h2 id="resource-categories">Resource Categories</h2>
+<h2 id="resource-categories">Resource Categories<a class="headerlink" href="#resource-categories" title="Permanent link"></a></h2>
 <p>The rate limit applies to the following resource-categories:</p>
 <table>
 <thead>
@@ -394,7 +502,7 @@ issued the first request.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="intervals">Intervals</h2>
+<h2 id="intervals">Intervals<a class="headerlink" href="#intervals" title="Permanent link"></a></h2>
 <p>Quotas have "Windows" that last for a limited time interval
 (generally 5-minutes). Once the user has exceeded the maximum request count,
 all future requests will fail with a <code>403</code> error until the interval expires.
@@ -402,7 +510,7 @@ Rate Limit intervals do not slide based upon the number of requests, they are
 fixed at a point in time starting from the very first request for that
 category of resource.  After the interval expires, the cycle will
 start over at zero and the user can make more requests.</p>
-<h3 id="example-a">Example A</h3>
+<h3 id="example-a">Example A<a class="headerlink" href="#example-a" title="Permanent link"></a></h3>
 <p>A user logs into the TradeStation WebAPI with your application and issues a
 request to <code>/v2/EliteTrader/accounts</code>. As a result, the request
 quota is incremented by one for the <code>Accounts</code> resource-category. The user
@@ -410,7 +518,7 @@ then issues 250 more requests immediately to <code>/v2/EliteTrader/accounts</cod
 The last request fails with <code>403 Quota Exceeded</code>. All subsequent requests
 continue to fail until the 5-minute interval expires from the time of the
 very first request.</p>
-<h3 id="example-b">Example B</h3>
+<h3 id="example-b">Example B<a class="headerlink" href="#example-b" title="Permanent link"></a></h3>
 <p>A user logs into the TradeStation WebAPI with your application and issues a
 request to <code>/v2/data/quote/IBM,NFLX,MSFT,AMZN,AAPL</code>. As a result, the
 request quota is incremented by one for the <code>Data Quotes</code>
@@ -457,6 +565,10 @@ Date: Tue, 06 Dec 2011 20:50:32 GMT
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 <a href="https://www.tradestation.com/_tomchristie">TradeStation Tecnologies</a>
+          </div>
         
         powered by
         <a href="https://www.mkdocs.org">MkDocs</a>

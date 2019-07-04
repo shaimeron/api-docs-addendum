@@ -204,10 +204,70 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="getting-started/" title="Getting Started" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
       Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="authentication/" title="Authentication" class="md-nav__link">
+      Authentication
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="example-console-app/" title="Creating a Console App" class="md-nav__link">
+      Creating a Console App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="example-web-app/" title="Creating a simple Web App" class="md-nav__link">
+      Creating a simple Web App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="example-react-app/" title="Creating a React Web App" class="md-nav__link">
+      Creating a React Web App
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -216,10 +276,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="api-details/" title="Exploring the API" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
       Exploring the API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Exploring the API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="marketdata/" title="MarketData" class="md-nav__link">
+      MarketData
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="brokerage/" title="Brokerage" class="md-nav__link">
+      Brokerage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="order-execution/" title="Order-Execution" class="md-nav__link">
+      Order-Execution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -287,17 +395,17 @@
               
                 
                 
-                <h1 id="welcome-to-tradestation-api-addendum">Welcome to TradeStation API - Addendum!</h1>
+                <h1 id="welcome-to-tradestation-api-addendum">Welcome to TradeStation API - Addendum!<a class="headerlink" href="#welcome-to-tradestation-api-addendum" title="Permanent link"></a></h1>
 <p>For the OpenID Specification visit <a href="https://tradestation.github.io/api-docs">https://tradestation.github.io/api-docs</a>.</p>
-<h1 id="purpose">Purpose</h1>
+<h1 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link"></a></h1>
 <p>This document describes the resources that make up the official TradeStation
 API. If you have any problems or requests please contact <a href="mailto:webapi@tradestation.com">support</a>.</p>
-<h1 id="basics">Basics</h1>
+<h1 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link"></a></h1>
 <p>The TradeStation API is reachable at the base-url:</p>
 <pre><code>https://api.tradestation.com/v2
 </code></pre>
 
-<h2 id="current-version">Current Version</h2>
+<h2 id="current-version">Current Version<a class="headerlink" href="#current-version" title="Permanent link"></a></h2>
 <p>The latest version is 20160101, but currently we are in transition, so by
 default all requests receive the 20101026 version for backwards compatibility.</p>
 <p>Always explicitly request this version by adding the <code>APIVersion</code>
@@ -307,7 +415,7 @@ querystring parameter as shown below:</p>
 
 <p>Note: This will ensure your application will not be broken when we deprecate
 the 20101026 version in favor of 20160101 or newer versions.</p>
-<h2 id="sim-vs-live">SIM vs LIVE</h2>
+<h2 id="sim-vs-live">SIM vs LIVE<a class="headerlink" href="#sim-vs-live" title="Permanent link"></a></h2>
 <p>We also offer a Simulator(SIM) API for "Paper Trading" that is identical
 to the Live API in all ways except it uses fake trading accounts seeded with
 fake money and orders are not actually executed - only simulated executions
@@ -318,7 +426,7 @@ occur with instant "fills".</p>
 
 <p><strong>WARNING:</strong> TradeStation is not liable for mistakes made by applications
 that allow users to switch between SIM and Live environments.</p>
-<h3 id="why-offer-a-simulator">Why offer a Simulator?</h3>
+<h3 id="why-offer-a-simulator">Why offer a Simulator?<a class="headerlink" href="#why-offer-a-simulator" title="Permanent link"></a></h3>
 <p>Transactional API calls such as Order Execution offers users or applications
 the ability to experiment within a Simulated trading system so that real
 accounts and money are not affected and trades are not actually executed.</p>
@@ -369,6 +477,10 @@ accounts and money are not affected and trades are not actually executed.</p>
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 <a href="https://www.tradestation.com/_tomchristie">TradeStation Tecnologies</a>
+          </div>
         
         powered by
         <a href="https://www.mkdocs.org">MkDocs</a>
